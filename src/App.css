@@ -1,38 +1,152 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  background-color: #111;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page {
+  display: flex;
+  justify-content: center; /* Left and right alignment */
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: black; /* Black background for the page */
+  padding: 0 50px;
+  box-sizing: border-box; /* Optional padding for page sides */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.box {
+  width: 500px;
+  height: 500px;
+  background-color: #555; /* Gray background for the boxes */
+  display: flex;
+  border: 1px solid #555;
+  box-shadow: 0 4px 6px gray;
+  margin: 0 20px;
+  color: white;
+  border-radius: 20px; 
+  /* Text color */
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.right-container{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  width: 600px;
+  justify-content: space-between;
+  height: 500px;
+  background-color: #2e2e2e;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.5);
+
+}
+
+.about-me ,.gallery{
+ background-color: #3c3c3c;
+ padding: 20px;
+ border-radius: 10px;
+ color: white;
+}
+.about-me{
+ flex: 1;
+ margin-bottom: 20px;
+}
+.navbar{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.navbar button{
+  
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #555;
   color: white;
+  padding: 10px;
 }
+.navbar button:active{
+  background-color: #777;
 
-.App-link {
-  color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar button:hover{
+  background-color: #888;
+}
+.content p{
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: white;
+  overflow-y: auto;
+  height: 60px;
   }
-  to {
-    transform: rotate(360deg);
+.gallery{
+  flex: 1;
+  
+}
+.gallery-header{
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 100px;
+  cursor: pointer;
+}
+.gallery-carousel{
+  display: flex;
+  padding: 10px 0;
+  gap: 10px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+.gallery-carousel img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.image-container::-webkit-scrollbar{
+  height: 8px;
+  position: absolute;
+  top: 0;
+  background-color: #333;
+  cursor: pointer;
+}
+.gallery-image{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.add-image-button{
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: #444;
+  color: white;
+  border-radius: 5px;
+}
+.add-image-button:hover{
+  background-color: #777;
+}
+
+
+@media (max-width: 768px) {
+  .right-container{
+    width: 100%;
+    height: auto;
+  }
+  .about-me,.gallery{
+    width: 100%;
   }
 }
